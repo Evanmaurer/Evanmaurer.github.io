@@ -1,32 +1,32 @@
-# React + TypeScript + Vite
+# Evan Maurer — Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+Personal technical portfolio for AI/ML, computer vision, embedded IoT, and full-stack product work.
 
-Currently, two official plugins are available:
+## Run locally
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
-
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the Oxlint configuration
-
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
-
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
+```bash
+cd ~/evan-maurer-portfolio
+npm install
+npm run dev
 ```
 
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+Open the printed URL (usually `http://localhost:5173`).
+
+## Resume
+
+- Browser/print version: [`public/Evan_Maurer_Resume.html`](public/Evan_Maurer_Resume.html)
+- Open in Chrome → Print → Save as PDF (Letter, default margins) for a one-page PDF.
+
+## Placeholder assets to add
+
+Listed on project pages as yellow dashed callouts:
+
+1. Device photo (Pico 2 W + camera + modem)
+2. FarmVates web/dashboard screenshot
+3. FarmVates iOS screenshot
+4. Real sticky-trap inference overlay
+5. MontageAI Electron UI screenshots → `public/assets/montage/`
+
+## Stack
+
+Vite · React · TypeScript · React Router
