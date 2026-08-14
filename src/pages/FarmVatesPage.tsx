@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
-import { Flow, Footer, Nav, Placeholder } from '../components/Layout'
+import { Flow, Footer, Nav } from '../components/Layout'
+import { asset } from '../lib/asset'
 
 export function FarmVatesPage() {
   return (
@@ -66,14 +67,19 @@ export function FarmVatesPage() {
         </ul>
 
         <div className="media-grid">
+          <figure className="media-frame media-frame-tall">
+            <img
+              src={asset('assets/iot/device_cad.png')}
+              alt="CAD model of FarmVates enclosure with Pico, camera, OLED, and power board"
+            />
+            <figcaption>
+              Device enclosure CAD — Pico board, camera module, OLED, and power/interface bay
+            </figcaption>
+          </figure>
           <figure className="media-frame">
-            <img src="/assets/iot/field_capture.jpg" alt="Field JPEG captured by FarmVates Pico camera" />
+            <img src={asset('assets/iot/field_capture.jpg')} alt="Field JPEG captured by FarmVates Pico camera" />
             <figcaption>Field capture from device serial 0E646AFB… (UXGA JPEG)</figcaption>
           </figure>
-          <Placeholder
-            title="Device photo"
-            need="Add a photo of the Pico 2 W + ArduCAM + OLED/modem assembly."
-          />
         </div>
 
         <h2 id="scene-gate">On-device scene-change gate</h2>
@@ -134,14 +140,24 @@ export function FarmVatesPage() {
         </ul>
 
         <div className="media-grid">
-          <Placeholder
-            title="Web / dashboard screenshot"
-            need="Add a screenshot from farmvates-website or FarmVates_Frontend showing live trap images or farm UI."
-          />
-          <Placeholder
-            title="iOS screenshot"
-            need="Add a Simulator or device screenshot from FarmVatesIOS (login, image gallery, or map)."
-          />
+          <figure className="media-frame media-frame-tall">
+            <img
+              src={asset('assets/web/dashboard.png')}
+              alt="FarmVates web dashboard showing online devices and daily insect trend chart"
+            />
+            <figcaption>
+              Web dashboard — live devices, GPS, insect trend chart, and image gallery entry points
+            </figcaption>
+          </figure>
+          <figure className="media-frame media-frame-phone">
+            <img
+              src={asset('assets/mobile/ios_devices.png')}
+              alt="FarmVates iOS TestFlight Devices screen with online and offline cameras"
+            />
+            <figcaption>
+              iOS app (TestFlight) — device list with last-seen status and image/edit actions
+            </figcaption>
+          </figure>
         </div>
 
         <h2>Technical challenges</h2>

@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import { Footer, Nav } from '../components/Layout'
 import { projects, stackBands } from '../data/projects'
+import { asset } from '../lib/asset'
 
 export function HomePage() {
   return (
@@ -19,7 +20,7 @@ export function HomePage() {
             <a className="btn btn-primary" href="#projects">
               View projects
             </a>
-            <a className="btn" href="/Evan_Maurer_Resume.html" target="_blank" rel="noreferrer">
+            <a className="btn" href={asset('Evan_Maurer_Resume.html')} target="_blank" rel="noreferrer">
               Resume
             </a>
             <a className="btn" href="https://github.com/Evanmaurer" target="_blank" rel="noreferrer">
@@ -105,8 +106,9 @@ export function HomePage() {
               <p>
                 Through the FarmVates research group I ship code that has to survive battery power,
                 flaky cellular links, scarce labeled data, and production Docker/Jenkins
-                deployments. Independently I am building MontageAI as a full product stack with
-                transparent, editable AI decisions.
+                deployments. Independently I built MontageAI far enough to run as a real app shell
+                with analysis and planning modules — still evolving, with transparent editable AI
+                decisions as the core idea.
               </p>
               <p>
                 Expected graduation May 2027 · Concentration in Artificial Intelligence &amp;

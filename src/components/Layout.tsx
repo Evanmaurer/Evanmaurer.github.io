@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import { asset } from '../lib/asset'
 
 const links = [
   { href: '/#projects', label: 'Projects' },
@@ -30,7 +31,7 @@ export function Nav() {
               </a>
             ),
           )}
-          <a className="cta" href="/Evan_Maurer_Resume.html" target="_blank" rel="noreferrer">
+          <a className="cta" href={asset('Evan_Maurer_Resume.html')} target="_blank" rel="noreferrer">
             Resume
           </a>
         </nav>

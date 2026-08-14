@@ -341,8 +341,31 @@ input {
 
 .media-frame img {
   width: 100%;
-  height: 200px;
+  height: 220px;
   object-fit: cover;
+}
+
+.media-frame-tall img {
+  height: 280px;
+  object-fit: contain;
+  background: #0a0e0c;
+}
+
+.media-frame-wide img {
+  height: auto;
+  max-height: 420px;
+  object-fit: contain;
+  background: #f4f1ea;
+}
+
+.media-frame-phone {
+  max-width: 320px;
+}
+
+.media-frame-phone img {
+  height: 420px;
+  object-fit: contain;
+  background: #111;
 }
 
 .media-frame figcaption {

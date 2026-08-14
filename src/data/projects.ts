@@ -42,8 +42,8 @@ export const projects: Project[] = [
     href: '/projects/montage',
     summary:
       'Desktop product for turning raw gameplay into editable AI montage plans — media analysis, clip scoring, music sync, and Albion-specific combat intelligence.',
-    role: 'Founding engineer / full-stack + AI pipeline',
-    status: 'Milestones 1–5 largely complete (Albion intelligence)',
+    role: 'Independent project — full-stack + AI pipeline',
+    status: 'Working through M5 (Albion intelligence); export/polish still in progress',
   },
   {
     id: 'edge-gate',

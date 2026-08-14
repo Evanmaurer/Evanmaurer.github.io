@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import { Flow, Footer, Nav, Placeholder } from '../components/Layout'
+import { asset } from '../lib/asset'
 
 export function SynthPestPage() {
   return (
@@ -47,15 +48,24 @@ export function SynthPestPage() {
         <h2>Pipeline</h2>
         <Flow
           nodes={[
-            '3D insect GLBs',
-            'Trap background crops',
-            'Domain-rand render',
-            'YOLO labels',
-            'Syn pretrain',
-            'Real finetune',
-            'Real-only val',
+            '2D insect photos',
+            'TripoSR 3D',
+            'Blender textures/meshes',
+            'Trap backgrounds + dims',
+            'Labeled synthetic renders',
+            'YOLO train / real-only val',
           ]}
         />
+        <figure className="media-frame media-frame-wide" style={{ margin: '1.25rem 0 1.75rem' }}>
+          <img
+            src={asset('assets/cv/synthpest_pipeline.png')}
+            alt="SynthPest pipeline diagram from 2D images through TripoSR and Blender to labeled synthetic data"
+          />
+          <figcaption>
+            SynthPest generation path — 2D photo → TripoSR → Blender assets → sticky-trap synthetic
+            dataset with boxes
+          </figcaption>
+        </figure>
 
         <h2>What I implemented / drove</h2>
         <ul>
@@ -79,16 +89,16 @@ export function SynthPestPage() {
 
         <div className="media-grid">
           <figure className="media-frame">
-            <img src="/assets/cv/trap_real_crop.jpg" alt="Real sticky-trap background crop" />
+            <img src={asset('assets/cv/trap_real_crop.jpg')} alt="Real sticky-trap background crop" />
             <figcaption>Real sticky-trap crop used as generator background</figcaption>
           </figure>
           <figure className="media-frame">
-            <img src="/assets/cv/synthetic_sample.jpg" alt="Synthetic sticky-trap render" />
+            <img src={asset('assets/cv/synthetic_sample.jpg')} alt="Synthetic sticky-trap render" />
             <figcaption>Synthetic sticky-trap sample (domain-randomized generator)</figcaption>
           </figure>
           <figure className="media-frame">
             <img
-              src="/assets/cv/synthetic_debug_bbox.jpg"
+              src={asset('assets/cv/synthetic_debug_bbox.jpg')}
               alt="Synthetic sample with debug bounding boxes"
             />
             <figcaption>Debug overlay with YOLO-format boxes</figcaption>

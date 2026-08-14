@@ -22,7 +22,7 @@ export function MontagePage() {
         <div className="meta-grid">
           <div className="meta-item">
             <span>Role</span>
-            Founding engineer — architecture, Electron/React UI, FastAPI backend, AI modules
+            Independent project — architecture, Electron/React UI, FastAPI backend, AI modules
           </div>
           <div className="meta-item">
             <span>Repo</span>
@@ -32,7 +32,7 @@ export function MontagePage() {
           </div>
           <div className="meta-item">
             <span>Status</span>
-            M1 shell complete; M3 analysis + M4 planning + M5 Albion intelligence largely complete
+            Working app through analysis + planning + Albion intelligence; export/polish still in progress
           </div>
         </div>
 
