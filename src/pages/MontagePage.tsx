@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { Flow, Footer, Nav, Placeholder } from '../components/Layout'
+import { Flow, Footer, Nav } from '../components/Layout'
 
 export function MontagePage() {
   return (
@@ -66,17 +66,6 @@ export function MontagePage() {
             engagement tags, highlight ranking, search, timeline annotation
           </li>
         </ul>
-
-        <div className="media-grid">
-          <Placeholder
-            title="MontageAI app screenshot"
-            need="Capture the Electron shell (media / preview / timeline / inspector) and drop it in public/assets/montage/shell.png."
-          />
-          <Placeholder
-            title="Plan / AI suggestions UI"
-            need="Screenshot of a montage plan, clip scores, or Albion combat timeline view."
-          />
-        </div>
 
         <h2>Stack</h2>
         <div className="tag-row" style={{ marginBottom: '2rem' }}>
