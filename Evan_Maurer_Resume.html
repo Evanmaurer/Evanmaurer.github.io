@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Evan Maurer — Resume</title>
+  <style>
+    @page { size: letter; margin: 0.45in 0.5in; }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      font-size: 9.6pt;
+      line-height: 1.28;
+      color: #111;
+      background: #fff;
+    }
+    .page {
+      max-width: 8in;
+      margin: 0 auto;
+      padding: 0.45in 0.5in;
+    }
+    h1 {
+      margin: 0 0 2px;
+      font-size: 18pt;
+      letter-spacing: 0.02em;
+      text-align: center;
+    }
+    .contact {
+      text-align: center;
+      font-size: 8.7pt;
+      margin-bottom: 8px;
+    }
+    .contact a { color: inherit; text-decoration: none; }
+    h2 {
+      margin: 8px 0 4px;
+      font-size: 10pt;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      border-bottom: 1.2px solid #222;
+      padding-bottom: 1px;
+    }
+    .row {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      align-items: baseline;
+    }
+    .org { font-weight: 700; }
+    .loc, .date { white-space: nowrap; }
+    .role { font-style: italic; }
+    ul {
+      margin: 2px 0 4px;
+      padding-left: 16px;
+    }
+    li { margin-bottom: 2px; }
+    .skills p { margin: 2px 0; }
+    .skills strong { font-weight: 700; }
+    @media print {
+      .page { padding: 0; max-width: none; }
+      a { color: inherit; text-decoration: none; }
+    }
+    .hint {
+      text-align: center;
+      font-size: 8pt;
+      color: #666;
+      margin-top: 10px;
+    }
+    @media print { .hint { display: none; } }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <h1>Evan Maurer</h1>
+    <div class="contact">
+      US Citizen · <a href="mailto:Evanm807@gmail.com">Evanm807@gmail.com</a> · 979-402-4060 ·
+      <a href="https://www.linkedin.com/in/evan-maurer">LinkedIn</a> ·
+      <a href="https://github.com/Evanmaurer">GitHub</a>
+    </div>
+
+    <h2>Education</h2>
+    <div class="row">
+      <div><span class="org">Missouri University of Science and Technology</span> — B.S. Computer Science</div>
+      <div class="date">May 2027</div>
+    </div>
+    <div class="row">
+      <div>Concentration: Artificial Intelligence &amp; Machine Learning</div>
+      <div class="loc">Rolla, MO</div>
+    </div>
+    <ul>
+      <li>Coursework: Data Structures &amp; Algorithms, Statistics, Linear Algebra, Deep Learning, NLP, Statistical Machine Learning</li>
+    </ul>
+
+    <h2>Research Experience</h2>
+    <div class="row">
+      <div><span class="org">FarmVates Research Group</span> — <span class="role">Undergraduate Researcher</span></div>
+      <div class="date">Nov 2025 – Present</div>
+    </div>
+    <ul>
+      <li>Built domain-randomized sticky-trap synthetic image pipelines (Python, Blender/GLB, TripoSR) for cucurbit pest detection under scarce labeled real data.</li>
+      <li>Trained and ablated YOLOv11 models (PyTorch / Ultralytics) with syn-pretrain → real-finetune curricula and <strong>real-only validation</strong> to measure sim-to-real transfer on Missouri S&amp;T GPUs (V100 / A5000).</li>
+      <li>Instrumented experiment logging, dataset prep, and domain-gap tooling; contributing to the SynthPest synthetic-insect data framework paper.</li>
+    </ul>
+
+    <h2>Engineering Projects</h2>
+    <div class="row">
+      <div><span class="org">FarmVates Edge-to-Cloud Imaging Platform</span> — <span class="role">Firmware &amp; Systems</span></div>
+      <div class="date">2025 – 2026</div>
+    </div>
+    <ul>
+      <li>Shipped Pico 2 W (RP2350) camera firmware: ArduCAM OV2640 capture, Wi‑Fi MQTT and cellular upload, OLED/watchdog/power-save duty cycles (C/C++, Pico SDK).</li>
+      <li>Designed cellular OTA with A/B flash partitions, HTTPS manifest versioning, modem HTTPTOFS download, SHA256 verify, and inactive-slot UF2 programming.</li>
+      <li>Implemented on-device scene-change gate (160×120 → 96×96 Y, SSIM/MAE ablations) to skip redundant UXGA + radio; field-scored 245 uploaded frames with offline ROC tools.</li>
+      <li>Contributed to cloud path: ZeroMQ/Redis message worker, PyTorch dark-image CNN gate before YOLO inference, Docker/Jenkins services, Flask/Mongo APIs, SwiftUI iOS client.</li>
+    </ul>
+
+    <div class="row">
+      <div><span class="org">MontageAI</span> — <span class="role">Independent AI Desktop App (in progress)</span></div>
+      <div class="date">2026</div>
+    </div>
+    <ul>
+      <li>Built a working Electron + React + FastAPI montage editor: project shell, media analysis pipeline, and editable AI plan objects (scoring, highlights, music sync, pacing) — not a one-click black-box render.</li>
+      <li>Added Albion-focused detectors (combat timelines, abilities, bomb fusion, searchable highlights); full export/polish roadmap remains in progress.</li>
+    </ul>
+
+    <div class="row">
+      <div><span class="org">Simply Natural</span> — <span class="role">Website Designer &amp; Maintainer</span></div>
+      <div class="date">Aug 2021 – Present</div>
+    </div>
+    <ul>
+      <li>Maintain production WordPress site integrated with LightSpeed POS for live inventory.</li>
+    </ul>
+
+    <h2>Skills</h2>
+    <div class="skills">
+      <p><strong>Languages:</strong> Python, C/C++, TypeScript, Swift, SQL</p>
+      <p><strong>AI / CV:</strong> PyTorch, Ultralytics YOLO, OpenCV, scikit-learn, CUDA, synthetic data / domain randomization</p>
+      <p><strong>Systems:</strong> Pico SDK, MQTT, cellular modems, OTA, Docker, Redis, ZeroMQ, Flask, FastAPI, MongoDB, Jenkins, S3</p>
+      <p><strong>Product:</strong> Electron, React, SwiftUI, Git/Linux</p>
+    </div>
+
+    <p class="hint">Print / Save as PDF (Letter, default margins) for a one-page PDF · Portfolio: run the site locally</p>
+  </div>
+</body>
+</html>
