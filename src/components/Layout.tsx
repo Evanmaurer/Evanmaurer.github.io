@@ -6,7 +6,7 @@ const links = [
   { href: '/#stack', label: 'Stack' },
   { href: 'https://github.com/Evanmaurer', label: 'GitHub', external: true },
   {
-    href: 'https://www.linkedin.com/in/evan-maurer',
+    href: 'https://www.linkedin.com/in/evan-maurer-aa44ba323/',
     label: 'LinkedIn',
     external: true,
   },

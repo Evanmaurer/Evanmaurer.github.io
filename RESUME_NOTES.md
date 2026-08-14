@@ -18,4 +18,4 @@ Print to PDF from the browser for applications.
 - Webscraper Simply Natural (redundant with site maintainer role)
 - Unverified “96% accuracy” claim on YOLO (real-only baseline in exp logs is much lower; resume emphasizes methodology instead)
 
-**Do not invent** LinkedIn slug if wrong — verify `linkedin.com/in/evan-maurer`.
+LinkedIn: `https://www.linkedin.com/in/evan-maurer-aa44ba323/`

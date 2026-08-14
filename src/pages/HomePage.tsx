@@ -28,7 +28,7 @@ export function HomePage() {
             </a>
             <a
               className="btn"
-              href="https://www.linkedin.com/in/evan-maurer"
+              href="https://www.linkedin.com/in/evan-maurer-aa44ba323/"
               target="_blank"
               rel="noreferrer"
             >
