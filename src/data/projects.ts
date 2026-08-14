@@ -32,7 +32,7 @@ export const projects: Project[] = [
     summary:
       'Domain-randomized sticky-trap synthetic generation and sim-to-real YOLO training for cucurbit pest detection, with experiment logging and real-only validation protocol.',
     role: 'Undergraduate researcher — synthetic data & model training',
-    status: 'Active research; contributing to SynthPest paper draft',
+    status: 'Active research; sticky-FT real val F1 0.89 (Exp 023); SynthPest paper contribution',
   },
   {
     id: 'montage',

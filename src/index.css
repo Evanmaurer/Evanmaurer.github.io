@@ -339,10 +339,41 @@ input {
   overflow: hidden;
 }
 
-.media-frame img {
+.metrics-table-wrap {
+  overflow-x: auto;
+  margin: 1rem 0 1.25rem;
+  border: 1px solid var(--line);
+}
+
+.metrics-table {
   width: 100%;
-  height: 220px;
-  object-fit: cover;
+  border-collapse: collapse;
+  font-size: 0.92rem;
+}
+
+.metrics-table th,
+.metrics-table td {
+  padding: 0.65rem 0.8rem;
+  text-align: left;
+  border-bottom: 1px solid var(--line);
+}
+
+.metrics-table th {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--sage);
+  font-weight: 500;
+}
+
+.metrics-table td {
+  color: var(--muted);
+}
+
+.metrics-table tbody tr:last-child td {
+  border-bottom: none;
+  color: var(--ink);
 }
 
 .media-frame-tall img {

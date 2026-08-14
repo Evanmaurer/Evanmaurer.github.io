@@ -111,16 +111,56 @@ export function SynthPestPage() {
 
         <h2>Experimentation (supported by logs)</h2>
         <p>
-          Experiment 001 reframed evaluation around <strong>real-only validation</strong>. An honest
-          baseline on the prior mixed-train checkpoint scored approximately{' '}
-          <strong>mAP50 ≈ 0.09</strong> on real-only val — exposing that mixed/syn-polluted metrics
+          Early work reframed evaluation around <strong>real-only validation</strong>. An honest
+          baseline on a prior mixed-train checkpoint scored approximately{' '}
+          <strong>mAP50 ≈ 0.09</strong> on real-only val — exposing that syn-polluted mixed metrics
           were not trustworthy. Domain-gap probes after generator v2 showed syn probe accuracy
-          dropping from 1.00 → ~0.72 (harder / more realistic syn domain). Full cluster
-          pretrain→finetune with larger v2 syn sets is the ongoing training track.
+          dropping from 1.00 → ~0.72 (harder / more realistic syn domain).
         </p>
         <p>
-          I am not listing an unverified “96% accuracy” here; portfolio and resume emphasize the
-          methodology and measured real-only baseline instead of optimistic syn scores.
+          <strong>Experiment 023</strong> (2026-07-29) applied the production sticky-trap fine-tune
+          recipe (<code>imgsz=1024</code>, freeze 10, <code>lr0=5e-5</code>, mosaic/copy-paste) on top
+          of a paper real-only checkpoint and scored a 100% real held-out val (
+          <code>compare_labels ±0.2</code>):
+        </p>
+        <div className="metrics-table-wrap">
+          <table className="metrics-table">
+            <thead>
+              <tr>
+                <th>Model</th>
+                <th>P</th>
+                <th>R</th>
+                <th>F1</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>paper_real_only (before FT)</td>
+                <td>0.822</td>
+                <td>0.716</td>
+                <td>0.766</td>
+              </tr>
+              <tr>
+                <td>paper_real_only + sticky FT</td>
+                <td>0.930</td>
+                <td>0.847</td>
+                <td>0.887</td>
+              </tr>
+              <tr>
+                <td>Inferer cuclarge.pt (production)</td>
+                <td>0.953</td>
+                <td>0.893</td>
+                <td>0.922</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p>
+          Sticky FT lifted F1 by <strong>+0.121</strong> vs the untuned paper-real model and closed
+          most of the gap to production Inferer weights (about −0.035 F1 remaining). That ~0.95
+          precision on the production sticky-trap model is the supported figure behind earlier
+          “~96%” shorthand — reported here as precision/recall/F1 on real held-out val, not as
+          unverified overall accuracy.
         </p>
 
         <h2>Technologies</h2>
