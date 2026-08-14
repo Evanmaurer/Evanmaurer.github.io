@@ -118,9 +118,10 @@ export function SynthPestPage() {
           dropping from 1.00 → ~0.72 (harder / more realistic syn domain).
         </p>
         <p>
-          <strong>Experiment 023</strong> (2026-07-29) applied the production sticky-trap fine-tune
-          recipe (<code>imgsz=1024</code>, freeze 10, <code>lr0=5e-5</code>, mosaic/copy-paste) on top
-          of a paper real-only checkpoint and scored a 100% real held-out val (
+          <strong>Experiment 023</strong> (2026-07-29) took a checkpoint trained through the
+          SynthPest / paper real-only pipeline (<code>cuc_paper_real_only</code>), applied the
+          production sticky-trap fine-tune recipe (<code>imgsz=1024</code>, freeze 10,{' '}
+          <code>lr0=5e-5</code>, mosaic/copy-paste), and scored a 100% real held-out val (
           <code>compare_labels ±0.2</code>):
         </p>
         <div className="metrics-table-wrap">
@@ -135,19 +136,27 @@ export function SynthPestPage() {
             </thead>
             <tbody>
               <tr>
-                <td>paper_real_only (before FT)</td>
+                <td>SynthPest paper_real_only (before sticky FT)</td>
                 <td>0.822</td>
                 <td>0.716</td>
                 <td>0.766</td>
               </tr>
               <tr>
-                <td>paper_real_only + sticky FT</td>
-                <td>0.930</td>
-                <td>0.847</td>
-                <td>0.887</td>
+                <td>
+                  <strong>SynthPest pipeline + sticky FT</strong> (my model)
+                </td>
+                <td>
+                  <strong>0.930</strong>
+                </td>
+                <td>
+                  <strong>0.847</strong>
+                </td>
+                <td>
+                  <strong>0.887</strong>
+                </td>
               </tr>
               <tr>
-                <td>Inferer cuclarge.pt (production)</td>
+                <td>Inferer cuclarge.pt (production reference)</td>
                 <td>0.953</td>
                 <td>0.893</td>
                 <td>0.922</td>
@@ -156,11 +165,12 @@ export function SynthPestPage() {
           </table>
         </div>
         <p>
-          Sticky FT lifted F1 by <strong>+0.121</strong> vs the untuned paper-real model and closed
-          most of the gap to production Inferer weights (about −0.035 F1 remaining). That ~0.95
-          precision on the production sticky-trap model is the supported figure behind earlier
-          “~96%” shorthand — reported here as precision/recall/F1 on real held-out val, not as
-          unverified overall accuracy.
+          Sticky FT on the SynthPest pipeline model lifted F1 by <strong>+0.121</strong> vs the
+          untuned paper-real checkpoint and closed most of the gap to the production Inferer
+          weights (about −0.035 F1 remaining). The <strong>0.930 precision / 0.847 recall / 0.887
+          F1</strong> row is the SynthPest sticky-FT result from this experiment — the figure
+          behind earlier “~96%” shorthand when people quote production-side precision (~0.95 on
+          Inferer), with my pipeline model landing at ~0.93 P on the same real held-out protocol.
         </p>
 
         <h2>Technologies</h2>
